@@ -1,194 +1,89 @@
-\# Patch Downloaders – NASA e SeaSky
+# 🛰️ NASA & SeaSky Patch Downloader
 
-
-
-Este repositório contém dois scripts em Python para download automatizado de patches de missões espaciais.  
-
-É destinado exclusivamente a fins \*\*educacionais\*\* e de \*\*demonstração de técnicas de web scraping com `requests` e `BeautifulSoup`\*\*.
-
-
+Este repositório contém dois scripts Python automatizados para download de **emblemas de missões espaciais** dos sites oficiais da NASA e SeaSky.  
+Os scripts percorrem as galerias de imagens, salvam os patches localmente e registram os links em arquivos `.csv` para evitar duplicações.
 
 ---
 
+## 📁 Estrutura de Diretórios
 
+D:\Usuários\dgms\Desktop\DOWNLOAD PATCHS
+├── NASA
+│ ├── patch_downloader.py
+│ └── patches.csv
+├── SEASKY
+│ ├── patch_downloader.py
+│ └── seasky_patches.csv
+├── requirements.txt
+├── .gitignore
+├── LICENSE
+└── README.md
 
-\## 📂 Estrutura
-
-
-
-DOWNLOAD PATCHS/
-
-│
-
-├── NASA/ # Imagens e script da NASA
-
-│ └── patch\_downloader.py
-
-│
-
-├── SEASKY/ # Imagens e script do site Sea and Sky
-
-│ └── seasky\_downloader.py
-
-│
-
-├── venv/ # Ambiente virtual (não subir no GitHub)
-
-│
-
-├── requirements.txt # Bibliotecas necessárias
-
-└── README.md # (este arquivo)
-
-
+yaml
+Copiar
+Editar
 
 ---
 
+## 📦 Requisitos
 
+- Python 3.8 ou superior
+- Internet ativa
+- Git (opcional, para versionamento)
+- Ambiente virtual (venv)
 
-\## 🧪 Instalação
+---
 
+## 🧪 Criar e ativar ambiente virtual
 
+Abra o PowerShell no diretório `DOWNLOAD PATCHS` e execute:
 
-Recomendado usar um ambiente virtual:
-
-
-
-```bash
-
+```powershell
 python -m venv venv
+.\venv\Scripts\Activate.ps1
+Você verá o prefixo (venv) no terminal, indicando que o ambiente está ativo.
 
-.\\venv\\Scripts\\activate
+📥 Instalar dependências
+Com o ambiente virtual ativado, rode:
 
+bash
+Copiar
+Editar
 pip install -r requirements.txt
-
-
-
-
-
-▶️ Uso
-
-NASA
-
-Para baixar os patches da NASA:
-
-
+▶️ Executar o script da NASA
+Este script percorre todas as páginas da galeria oficial de patches da NASA, baixa as imagens e salva o controle em patches.csv.
 
 bash
-
 Copiar
-
 Editar
-
 cd NASA
+python patch_downloader.py
+Fonte de dados:
+https://www.nasa.gov/gallery/human-spaceflight-mission-patches
 
-python patch\_downloader.py
-
-Sea and Sky
-
-Para baixar os patches do site Sea and Sky:
-
-
+▶️ Executar o script do SeaSky
+Este script coleta os patches de missões Apollo, Gemini, Mercury e Skylab do site SeaSky.org.
 
 bash
-
 Copiar
-
 Editar
+cd ..\SEASKY
+python patch_downloader.py
+Fonte de dados:
+https://www.seasky.org/space-exploration/space-patch-gallery.html
 
-cd SEASKY
+🧠 Funcionamento
+As imagens são baixadas apenas se ainda não estiverem listadas no respectivo .csv.
 
-python seasky\_downloader.py
+Cada script pode ser executado novamente sem gerar duplicatas.
 
-⚠️ Aviso Legal
-
-NASA
-
-O conteúdo do site da NASA está, em geral, em domínio público. Mais detalhes:
-
-🔗 https://www.nasa.gov/multimedia/guidelines/
-
-
-
-Sea and Sky
-
-All content on this site is Copyright © 1998 - 2016 by Sea and Sky.
-
-Content from this Website may not be used in any form without written permission.
-
-
-
-🛑 Este script não deve ser utilizado para redistribuição pública das imagens obtidas do site Sea and Sky sem autorização expressa. Este projeto é apenas uma ferramenta técnica para fins educacionais.
-
-
+As imagens são salvas nas pastas NASA/patches/ e SEASKY/patches/.
 
 📄 Licença
+Este projeto está licenciado sob a MIT License.
 
-Este projeto está sob a licença MIT. Consulte o arquivo LICENSE.
+✨ Contribuições
+Sinta-se à vontade para abrir issues ou pull requests com melhorias, ajustes ou novos sites de patches!
 
-
-
-
-
----
-
-
-
-\### ✅ 2. `LICENSE` (MIT)
-
-
-
-```text
-
-MIT License
-
-
-
-Copyright (c) 2025 João Eduardo
-
-
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-
-of this software and associated documentation files (the “Software”), to deal
-
-in the Software without restriction...
-
-
-
-\[texto completo da licença MIT — posso gerar ele 100% se quiser, é só pedir]
-
-
-
-✅ 3. .gitignore (para não subir venv nem imagens)
-
-gitignore
-
-Copiar
-
-Editar
-
-\# Ignorar ambiente virtual
-
-venv/
-
-
-
-\# Ignorar imagens
-
-NASA/\*.jpg
-
-NASA/\*.png
-
-SEASKY/\*.jpg
-
-SEASKY/\*.png
-
-
-
-\# Cache do Python
-
-\_\_pycache\_\_/
-
-\*.pyc
-
+🌌 Autor
+Desenvolvido por João Eduardo Tabalipa — assessor e entusiasta da exploração espacial.
