@@ -84,6 +84,3 @@ Este projeto está licenciado sob a MIT License.
 
 ✨ Contribuições
 Sinta-se à vontade para abrir issues ou pull requests com melhorias, ajustes ou novos sites de patches!
-
-🌌 Autor
-Desenvolvido por João Eduardo Tabalipa — assessor e entusiasta da exploração espacial.
