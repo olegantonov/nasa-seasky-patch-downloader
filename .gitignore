@@ -1,0 +1,12 @@
+# Ignorar ambiente virtual
+venv/
+
+# Ignorar imagens
+NASA/*.jpg
+NASA/*.png
+SEASKY/*.jpg
+SEASKY/*.png
+
+# Cache do Python
+__pycache__/
+*.pyc
